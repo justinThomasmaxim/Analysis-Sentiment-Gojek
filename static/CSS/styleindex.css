@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.container {
+  text-align: center;
+}
+
+.gradient-text {
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(to right, #4e7fff, #b066ff, #ff6e7f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 20px;
+}
+
+.start-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(to right, #4e7fff, #b066ff);
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+a.start-button {
+  text-decoration: none;
+  color: white; /* Tetap putih seperti tombol biasa */
+}
+
+.start-button:hover {
+  background: linear-gradient(to right, #ff6e7f, #b066ff);
+}
+
+.options {
+  display: none;
+}
+
+.button-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Jarak antar tombol */
+  flex-wrap: wrap;
+}

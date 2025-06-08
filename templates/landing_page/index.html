@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Halo, Shu</title>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='CSS/styleindex.css') }}"
+		/>
+	</head>
+	<body>
+		<div class="container">
+			<div id="intro">
+				<h1 class="gradient-text">
+					Selamat Datang Di Website Klasifikasi Sentimen
+				</h1>
+				<button class="start-button" onclick="showOptions()">
+					Mulai Chat
+				</button>
+			</div>
+
+			<div class="options" id="methodOptions">
+				<h1 class="gradient-text">Pilih Metode</h1>
+				<div class="button-row">
+					<a href="/naive_bayes" class="start-button"
+						>Metode Naive Bayes</a
+					>
+					<a href="/cnn" class="start-button">Metode CNN</a>
+				</div>
+			</div>
+		</div>
+
+		<script>
+			function showOptions() {
+				document.getElementById("intro").style.display = "none";
+				document.getElementById("methodOptions").style.display =
+					"block";
+			}
+		</script>
+	</body>
+</html>

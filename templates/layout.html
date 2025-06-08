@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chat Metode Naive Bayes dan CNN</title>
+		<!-- <link rel="stylesheet" href="../Static/CSS/style.css" /> -->
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='CSS/style.css') }}"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<div class="layout">
+			<!-- Sidebar -->
+			<aside class="sidebar">
+				<div class="sidebar-title">
+					<i class="ri-lightbulb-line"></i> Pilih Metode
+				</div>
+				<div class="chat-history">
+					<a href="/naive_bayes" class="chat-item" onclick="switchChat('naivebayes')">
+						<i class="ri-cpu-line"></i> Metode Naive Bayes
+					</a>
+					<a href="/cnn" class="chat-item" onclick="switchChat('cnn')">
+						<i class="ri-brain-line"></i> Metode CNN
+					</a>
+				</div>
+				<div class="sidebar-footer">
+					<div class="chat-item">
+						<i class="ri-settings-3-line"></i>Pengaturan
+					</div>
+					<a href="/" class="chat-item">
+						<i class="ri-logout-box-r-line"></i> Keluar
+					</a>
+				</div>
+			</aside>
+
+			{% block content %} {% endblock %}
+		</div>
+
+		<!-- <script src="../Static/JS/index.js"></script> -->
+		<script src="{{ url_for('static', filename='JS/index.js') }}"></script>
+		<!-- <link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='JS/index.js') }}"
+		/> -->
+	</body>
+</html>

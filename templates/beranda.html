@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Chat Metode Naive Bayes dan CNN</title>
+		<link rel="stylesheet" href="../Static/CSS/style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<div class="layout">
+			<!-- Sidebar -->
+			<aside class="sidebar">
+				<div class="sidebar-title">
+					<i class="ri-lightbulb-line"></i> Pilih Metode
+				</div>
+				<div class="chat-history">
+					<div class="chat-item" onclick="switchChat('naivebayes')">
+						<i class="ri-cpu-line"></i> Metode Naive Bayes
+					</div>
+					<div class="chat-item" onclick="switchChat('cnn')">
+						<i class="ri-brain-line"></i> Metode CNN
+					</div>
+				</div>
+				<div class="sidebar-footer">
+					<div class="chat-item">
+						<i class="ri-settings-3-line"></i>Pengaturan
+					</div>
+					<a href="index.html" class="chat-item">
+						<i class="ri-logout-box-r-line"></i> Keluar
+					</a>
+				</div>
+			</aside>
+
+			<!-- Chat Area Naive Bayes -->
+			<main class="chat-area active" id="chat-naivebayes">
+				<div class="chat-header">
+					<div class="chat-title">
+						Klasifikasi Sentimen
+						<i class="ri-arrow-down-s-line"></i>
+					</div>
+					<img
+						src="../Static/IMG/uprjaya.png"
+						alt="Logo UPR"
+						class="chat-logo"
+					/>
+				</div>
+
+				<div class="chat-messages" id="messages-naivebayes"></div>
+				<form id="form-naivebayes" class="chat-input">
+					<label class="file-upload">
+						<i class="ri-image-line"></i>
+						<input
+							type="file"
+							accept="image/*"
+							id="file-naivebayes"
+						/>
+					</label>
+					<input
+						type="text"
+						placeholder="Tanyakan apa saja..."
+						id="input-naivebayes"
+					/>
+					<button type="submit">
+						<i class="ri-send-plane-2-line"></i>
+					</button>
+				</form>
+			</main>
+
+			<!-- Chat Area CNN -->
+			<main class="chat-area" id="chat-cnn">
+				<div class="chat-header">
+					<div class="chat-title">
+						Klasifikasi Sentimen
+						<i class="ri-arrow-down-s-line"></i>
+					</div>
+					<img
+						src="../Static/IMG/uprjaya.png"
+						alt="Logo UPR"
+						class="chat-logo"
+					/>
+				</div>
+
+				<div class="chat-messages" id="messages-cnn"></div>
+				<form id="form-cnn" class="chat-input">
+					<label class="file-upload">
+						<i class="ri-image-line"></i>
+						<input type="file" accept="image/*" id="file-cnn" />
+					</label>
+					<input
+						type="text"
+						placeholder="Tanyakan apa saja..."
+						id="input-cnn"
+					/>
+					<button type="submit">
+						<i class="ri-send-plane-2-line"></i>
+					</button>
+				</form>
+			</main>
+		</div>
+
+		<script src="../Static/JS/index.js"></script>
+	</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- Chat Area CNN -->
+<main class="chat-area active" id="chat-cnn">
+	<div class="chat-header">
+		<div class="chat-title">
+			Klasifikasi Sentimen CNN <i class="ri-arrow-down-s-line"></i>
+		</div>
+		<img
+			src="{{ url_for('static', filename='IMG/uprjaya.png') }}"
+			alt="Logo UPR"
+			class="chat-logo"
+		/>
+	</div>
+
+	<div class="chat-messages" id="messages-cnn" style="text-align:center; padding: 1rem;">
+		{% if prediction %}
+			<p><strong>Ulasan:</strong> {{ request.form.message }}</p>
+			{% if prediction == 'Negatif' %}
+				<h2 style="color:red;" align="center">Bad Review (Negative)</h2>
+			{% elif prediction == 'Netral' %}
+				<h2 style="color:orange;" align="center">Neutral Review</h2>
+			{% elif prediction == 'Positif' %}
+				<h2 style="color:green;" align="center">Good Review (Positive)</h2>
+			{% endif %}
+			<p><strong>Confidence:</strong> {{ (confidence) | round(2) }}%</p>
+		{% else %}
+			<p>Masukkan ulasan untuk melihat hasil prediksi.</p>
+		{% endif %}
+	</div>
+
+	<form id="form-cnn" class="chat-input" action="/cnn" method="POST">
+		<label class="file-upload">
+			<i class="ri-image-line"></i>
+			<input type="file" accept="image/*" id="file-cnn" />
+		</label>
+		<input
+			type="text"
+			placeholder="Masukkan Ulasan..."
+			id="input-cnn"
+			name="message"
+			required
+		/>
+		<button type="submit"><i class="ri-send-plane-2-line"></i></button>
+	</form>
+</main>
+
+{% endblock %}

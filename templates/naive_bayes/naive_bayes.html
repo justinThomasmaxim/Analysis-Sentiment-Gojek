@@ -1,0 +1,51 @@
+{% extends 'layout.html' %} {% block content %}
+
+<!-- Chat Area Naive Bayes -->
+<main class="chat-area active" id="chat-naivebayes">
+	<div class="chat-header">
+		<div class="chat-title">
+			Klasifikasi Sentimen Naive Bayes<i class="ri-arrow-down-s-line"></i>
+		</div>
+		<img
+			src="{{ url_for('static', filename='IMG/uprjaya.png') }}"
+			alt="Logo UPR"
+			class="chat-logo"
+		/>
+	</div>
+
+	<div class="chat-messages" id="messages-naivebayes" style="text-align:center; padding: 1rem;">
+		{% if prediction %}
+			<p><strong>Ulasan:</strong> {{ request.form.message }}</p>
+			{% if prediction == 'negatif' %}
+				<h2 style="color: red" align="center">Bad Review (Negative)</h2>
+			{% elif prediction == 'positif' %}
+				<h2 style="color: green" align="center">Good Review (Positive)</h2>
+			{% elif prediction == 'netral' %}
+				<h2 style="color: orange" align="center">Neutral Review</h2>
+			{% endif %}
+			<p align="center">Confidence: {{ '%.2f'|format(confidence) }}%</p>
+		{% else %}
+			<p>Masukkan ulasan untuk melihat hasil prediksi.</p>
+		{% endif %}
+	</div>
+	<form
+		id="form-naivebayes"
+		class="chat-input"
+		action="/naive_bayes"
+		method="POST"
+	>
+		<label class="file-upload">
+			<i class="ri-image-line"></i>
+			<input type="file" accept="image/*" id="file-naivebayes" />
+		</label>
+		<input
+			type="text"
+			placeholder="Masukkan Ulasan..."
+			id="input-naivebayes"
+			name="message"
+			required
+		/>
+		<button type="submit"><i class="ri-send-plane-2-line"></i></button>
+	</form>
+</main>
+{% endblock %}
